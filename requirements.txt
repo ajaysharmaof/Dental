@@ -19,7 +19,6 @@ isort==4.3.21
 keyring==17.1.1
 keyrings.alt==3.1.1
 lazy-object-proxy==1.4.2
-
 m3u8==0.3.7
 mccabe==0.6.1
 mysql-connector-python==8.0.13
@@ -37,7 +36,6 @@ pymongo==3.10.0
 PySimpleSOAP==1.16.2
 pysmbc==1.0.15.6
 PySocks==1.7.1
-python-apt==1.8.4
 python-debian==0.1.35
 python-debianbts==2.8.2
 python-decouple==3.3
