@@ -132,19 +132,20 @@ STATICFILES_DIRS = [
 
 #for heroku
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-'''
+
 EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'ajaysharmaof@gmail.com'
+EMAIL_HOST_PASSWORD = 'monk@35421@123'  #USE DJANGO ENVIRMENT VARABLE
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'ajaysharma@gmail.com'
-EMAIL_HOST_PASSWORD = 'DR PASSWORD' #USE DJANGO ENVIRMENT VARABLE
 EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
-'''
-#python -m smtpd -n -c DebuggingServe localhost:1025
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = 1025
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = '' #USE DJANGO ENVIRMENT VARABLE
-EMAIL_USE_TLS = False
+EMAIL_USE_SSL = False 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+
+
+
 
 django_heroku.settings(locals())
+
+
