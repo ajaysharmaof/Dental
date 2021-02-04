@@ -132,8 +132,10 @@ STATICFILES_DIRS = [
 
 #for heroku
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#cd -> nano .bashrc
 
 EMAIL_HOST = 'smtp.gmail.com'
+
 EMAIL_HOST_USER = 'ajaysharmaof@gmail.com'
 EMAIL_HOST_PASSWORD = 'monk@35421@123'  #USE DJANGO ENVIRMENT VARABLE
 EMAIL_PORT = 587

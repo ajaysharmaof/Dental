@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,8 +37,8 @@
           <!-- Top Content -->
           <div class="col-6 col-md-9 col-lg-8">
             <div class="top-header-content">
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="10 Zerbert St. New York, New York, 12345"><i class="fa fa-map-marker"></i> <span>10 Zerbert St. New York, New York, 12345</span></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="drjohn@gmail.com"><i class="fa fa-envelope"></i> <span>drjohn@gmail.com</span></a>
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="B 193 jda colony paldi mena jaipur(302031) 8696618973"><i class="fa fa-map-marker"></i> <span>B 193 jda colony paldi mena jaipur(302031) 8696618973</span></a>
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="ajaysharmaf@gmail.com"><i class="fa fa-envelope"></i> <span>ajaysharmaof@gmail.com</span></a>
             </div>
           </div>
           <!-- Top Header Social Info -->
@@ -46,7 +47,7 @@
               <a href="http://facebook.com/drjohn" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
               <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
               <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+              <!--<a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin"></i></a>-->
             </div>
           </div>
         </div>
@@ -88,7 +89,7 @@
                       <li><a href="{% url 'service' %}">- Service</a></li>
                       <li><a href="{% url 'pricing' %}">- Pricing</a></li>
                       <li><a href="{% url 'blog' %}">- Blog</a></li>
-                      <li><a href="{% url 'blogdetail' %}">- Blog Details</a></li>
+                      <li><a href="{% url 'blogdetails' %}">- Blog Details</a></li>
                       <li><a href="{% url 'contact' %}">- Contact</a></li>
                       
                     </ul>
@@ -96,7 +97,12 @@
                   <li><a href="{% url 'about' %}">About</a></li>
                   <li><a href="{% url 'service' %}">Service</a></li>
                   <li><a href="{% url 'pricing' %}">Pricing</a></li>
-                  
+                    <li>Blog
+                    <ul class="dropdown">
+                      <li><a href="{% url 'blog' %}">- Blog</a></li>
+                      <li><a href="{% url 'blogdetails' %}">- Blog Details</a></li>
+                    </ul>
+                  </li>
                   <li><a href="{% url 'contact' %}">Contact</a></li>
                 </ul>
               </div>
@@ -104,7 +110,7 @@
             </div>
 
             <!-- Booking Now Button -->
-            <a href="#" class="btn dento-btn booking-btn">Booking Now</a>
+            <a href="{% url 'contact' %}" class="btn dento-btn booking-btn">Booking Now</a>
           </nav>
         </div>
       </div>
@@ -127,7 +133,7 @@
                 <p data-animation="fadeInUp" data-delay="300ms">As a leading industry innovator, Dento is opening up exciting new opportunities for dental professionals, investors, employees & suppliers. Contact us to find out what we have to
                   offer you.</p>
                 <div class="welcome-btn-group">
-                  <a href="#" class="btn dento-btn mx-2" data-animation="fadeInUp" data-delay="500ms">Book Now</a>
+                  <a href="{% url 'contact' %}" class="btn dento-btn mx-2" data-animation="fadeInUp" data-delay="500ms">Book Now</a>
                   <a href="{% url 'contact' %}" class="btn dento-btn mx-2 active" data-animation="fadeInUp" data-delay="700ms">Contact Us</a>
                 </div>
               </div>
@@ -147,8 +153,8 @@
                 <p data-animation="fadeInDown" data-delay="300ms">As a leading industry innovator, Dento is opening up exciting new opportunities for dental professionals, investors, employees & suppliers. Contact us to find out what we have to
                   offer you.</p>
                 <div class="welcome-btn-group">
-                  <a href="#" class="btn dento-btn mx-2" data-animation="fadeInDown" data-delay="500ms">Get Started</a>
-                  <a href="#" class="btn dento-btn mx-2 active" data-animation="fadeInDown" data-delay="700ms">Contact Us</a>
+                  <a href="{% url 'contact' %}" class="btn dento-btn mx-2" data-animation="fadeInDown" data-delay="500ms">Book Now</a>
+                  <a href="{% url 'contact' %}" class="btn dento-btn mx-2 active" data-animation="fadeInDown" data-delay="700ms">Contact Us</a>
                 </div>
               </div>
             </div>
@@ -328,9 +334,9 @@
 
         <!-- Video Area -->
         <div class="col-12 col-lg-6">
-{% comment %}           <div class="dento-video-area mb-100">
+ {% comment %}           <div class="dento-video-area mb-100">
            <iframe width="560" height="315" src="https://www.youtube.com/embed/l0-sgoIUviQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div> {% endcomment %}
+          </div>  {% endcomment %}
         </div>
       </div>
     </div>
@@ -661,16 +667,16 @@
         <!-- Single Blog Item -->
         <div class="col-12 col-md-6 col-lg-4">
           <div class="single-blog-item mb-100">
-            <a href="./blog-details.html">
+            <a href="{% url 'blogdetails' %}">
               <img src="{% static 'website/img/bg-img/4.jpg' %}" alt="">
             </a>
             <!-- Blog Content -->
             <div class="blog-content">
-              <a href="./blog-details.html" class="post-title">How your mouth bacteria can harm your lungs</a>
+              <a href="{% url 'blogdetails' %}" class="post-title">How your mouth bacteria can harm your lungs</a>
               <p>Donec tempor, lorem et euismod eleifend, est lectus laoreet ante, sed accusan justo diam ...</p>
               <div class="post-meta">
-                <a href="#"><i class="icon_clock_alt"></i> 28 Sep 2018</a>
-                <a href="#"><i class="icon_chat_alt"></i> 3 Comments</a>
+                <a href="{% url 'blogdetails' %}"><i class="icon_clock_alt"></i> 28 Sep 2018</a>
+                <a href="{% url 'blogdetails' %}"><i class="icon_chat_alt"></i> 3 Comments</a>
               </div>
             </div>
           </div>
@@ -679,16 +685,16 @@
         <!-- Single Blog Item -->
         <div class="col-12 col-md-6 col-lg-4">
           <div class="single-blog-item mb-100">
-            <a href="./blog-details.html">
+            <a href="{% url 'blogdetails' %}">
               <img src="{% static 'website/img/bg-img/5.jpg' %}" alt="">
             </a>
             <!-- Blog Content -->
             <div class="blog-content">
-              <a href="./blog-details.html" class="post-title">What is the best kind of toothpaste to use?</a>
+              <a href="{% url 'blogdetails' %}" class="post-title">What is the best kind of toothpaste to use?</a>
               <p>Donec tempor, lorem et euismod eleifend, est lectus laoreet ante, sed accusan justo diam ...</p>
               <div class="post-meta">
-                <a href="#"><i class="icon_clock_alt"></i> 28 Sep 2018</a>
-                <a href="#"><i class="icon_chat_alt"></i> 3 Comments</a>
+                <a href="{% url 'blogdetails' %}"><i class="icon_clock_alt"></i> 28 Sep 2018</a>
+                <a href="{% url 'blogdetails' %}"><i class="icon_chat_alt"></i> 3 Comments</a>
               </div>
             </div>
           </div>
@@ -702,11 +708,11 @@
             </a>
             <!-- Blog Content -->
             <div class="blog-content">
-              <a href="./blog-details.html" class="post-title">Why you should avoid sipping your drinks</a>
+              <a href="{% url 'blogdetails' %}" class="post-title">Why you should avoid sipping your drinks</a>
               <p>Donec tempor, lorem et euismod eleifend, est lectus laoreet ante, sed accusan justo diam ...</p>
               <div class="post-meta">
-                <a href="#"><i class="icon_clock_alt"></i> 28 Sep 2018</a>
-                <a href="#"><i class="icon_chat_alt"></i> 3 Comments</a>
+                <a href="{% url 'blogdetails' %}"><i class="icon_clock_alt"></i> 28 Sep 2018</a>
+                <a href="{% url 'blogdetails' %}"><i class="icon_chat_alt"></i> 3 Comments</a>
               </div>
             </div>
           </div>
@@ -723,12 +729,12 @@
         <!-- Single Footer Widget -->
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="single-footer-widget">
-            <a href="./index.html" class="d-block mb-4"><img src="{% static 'website/img/core-img/logo.png' %}" alt=""></a>
+            <a href="{% url 'home' %}" class="d-block mb-4"><img src="{% static 'website/img/core-img/logo.png' %}" alt=""></a>
             <p>Etiam sutor risus, dapibus act elefend katen, lacinia sitamet denim. Mauris sagittis kansa interdum dignissim.</p>
             <div class="footer-contact">
-              <p><i class="icon_pin"></i> 28 Jackson Street, Chicago, 7788569 USA</p>
-              <p><i class="icon_phone"></i> +84. 2252. 2250. 122</p>
-              <p><i class="icon_mail"></i> info.dento@gmail.com</p>
+              <p><i class="icon_pin"></i> B 193 JDA colony, paldi meena, agra road, jaipur, 302031  </p>
+              <p><i class="icon_phone"></i> +91-8696618973</p>
+              <p><i class="icon_mail"></i> ajaysharmaof@gmail.com</p>
             </div>
           </div>
         </div>
@@ -759,15 +765,15 @@
             <!-- Quick Links Nav -->
             <nav>
               <ul class="quick-links">
-                <li><a href="#">About</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
                 <li><a href="#">FAQs</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
                 <li><a href="#">Policy</a></li>
                 <li><a href="#">News</a></li>
                 <li><a href="#">Advisors</a></li>
                 <li><a href="#">Careers</a></li>
                 <li><a href="#">Dentist</a></li>
-                <li><a href="#">Services</a></li>
+                <li><a href="{% url 'service' %}">Services</a></li>
                 <li><a href="#">Legals</a></li>
               </ul>
             </nav>

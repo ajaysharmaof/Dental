@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>Services</title>
+  <title>Dental Ajay</title>
 
   <!-- Favicon -->
   <link rel="icon" href="{% static 'website/img/core-img/favicon.ico' %}">
@@ -36,18 +37,17 @@
           <!-- Top Content -->
           <div class="col-6 col-md-9 col-lg-8">
             <div class="top-header-content">
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="28 Jackson Street, Chicago, 7788569 USA"><i class="fa fa-map-marker"></i> <span>28 Jackson Street, Chicago, 7788569 USA</span></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="info.dento@gmail.com"><i class="fa fa-envelope"></i> <span>info.dento@gmail.com</span></a>
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="B 193 jda colony paldi mena jaipur(302031) 8696618973"><i class="fa fa-map-marker"></i> <span>B 193 jda colony paldi mena jaipur(302031) 8696618973</span></a>
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="ajaysharmaf@gmail.com"><i class="fa fa-envelope"></i> <span>ajaysharmaof@gmail.com</span></a>
             </div>
           </div>
           <!-- Top Header Social Info -->
           <div class="col-6 col-md-3 col-lg-4">
             <div class="top-header-social-info text-right">
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
+              <a href="http://facebook.com/drjohn" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
               <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
               <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+              <!--<a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin"></i></a>-->
             </div>
           </div>
         </div>
@@ -89,7 +89,7 @@
                       <li><a href="{% url 'service' %}">- Service</a></li>
                       <li><a href="{% url 'pricing' %}">- Pricing</a></li>
                       <li><a href="{% url 'blog' %}">- Blog</a></li>
-                      <li><a href="{% url 'blogdetail' %}">- Blog Details</a></li>
+                      <li><a href="{% url 'blogdetails' %}">- Blog Details</a></li>
                       <li><a href="{% url 'contact' %}">- Contact</a></li>
                       
                     </ul>
@@ -97,7 +97,12 @@
                   <li><a href="{% url 'about' %}">About</a></li>
                   <li><a href="{% url 'service' %}">Service</a></li>
                   <li><a href="{% url 'pricing' %}">Pricing</a></li>
-                  
+                    <li><a href="#">Blog</a>
+                    <ul class="dropdown">
+                      <li><a href="{% url 'blog' %}">- Blog</a></li>
+                      <li><a href="{% url 'blogdetails' %}">- Blog Details</a></li>
+                    </ul>
+                  </li>
                   <li><a href="{% url 'contact' %}">Contact</a></li>
                 </ul>
               </div>
@@ -105,8 +110,9 @@
             </div>
 
             <!-- Booking Now Button -->
-            <a href="#" class="btn dento-btn booking-btn">Booking Now</a>
+            <a href="{% url 'contact' %}" class="btn dento-btn booking-btn">Booking Now</a>
           </nav>
+
       </div>
       </div>
     </div>
@@ -358,12 +364,12 @@
         <!-- Single Footer Widget -->
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="single-footer-widget">
-            <a href="./index.html" class="d-block mb-4"><img src="{% static 'website/img/core-img/logo.png' %}" alt=""></a>
+            <a href="{% url 'home' %}" class="d-block mb-4"><img src="{% static 'website/img/core-img/logo.png' %}" alt=""></a>
             <p>Etiam sutor risus, dapibus act elefend katen, lacinia sitamet denim. Mauris sagittis kansa interdum dignissim.</p>
             <div class="footer-contact">
-              <p><i class="icon_pin"></i> 28 Jackson Street, Chicago, 7788569 USA</p>
-              <p><i class="icon_phone"></i> +84. 2252. 2250. 122</p>
-              <p><i class="icon_mail"></i> info.dento@gmail.com</p>
+              <p><i class="icon_pin"></i> B 193 JDA colony, paldi meena, agra road, jaipur, 302031  </p>
+              <p><i class="icon_phone"></i> +91-8696618973</p>
+              <p><i class="icon_mail"></i> ajaysharmaof@gmail.com</p>
             </div>
           </div>
         </div>
@@ -394,15 +400,15 @@
             <!-- Quick Links Nav -->
             <nav>
               <ul class="quick-links">
-                <li><a href="#">About</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
                 <li><a href="#">FAQs</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
                 <li><a href="#">Policy</a></li>
                 <li><a href="#">News</a></li>
                 <li><a href="#">Advisors</a></li>
                 <li><a href="#">Careers</a></li>
                 <li><a href="#">Dentist</a></li>
-                <li><a href="#">Services</a></li>
+                <li><a href="{% url 'service' %}">Services</a></li>
                 <li><a href="#">Legals</a></li>
               </ul>
             </nav>
@@ -463,7 +469,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   <script src="{% static 'website/js/dento.bundle.js' %}"></script>
   <!-- Active js -->
   <script src="{% static 'website/js/default-assets/active.js' %}"></script>
-
 
 </body>
 

@@ -3,6 +3,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.template import loader
 
+
 def home(request):
 	return render(request, 'home.html', {})
 
@@ -42,9 +43,10 @@ def message(request):
 def pricing(request):
 	return render(request, 'pricing.html', {})
 
+
 def service(request):
     	return render(request, 'service.html', {})
 
-def blogdetail(request):
-    	return render(request, 'blog-details.html', {})
+def blogdetails(request):
+    	return render(request, 'blogdetails.html', {})
 
